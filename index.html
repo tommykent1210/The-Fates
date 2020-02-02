@@ -33,7 +33,12 @@
         margin-left: 10px;
     }
 
-    .player-card {flex: 1;max-width: 300px;padding: 10px;}
+    .player-card {
+        flex: 1;
+        max-width: 250px;
+        padding: 10px;
+        position: relative;
+    }
 
     .card-header {
         background: rgba(255,255,255,1);
@@ -45,7 +50,8 @@
         padding: 10px;
         width: 100%;
         background: transparent;
-        color: white;
+        color: black;
+        font-weight: bold;
         text-align: center;
         border: none;
     }
@@ -57,12 +63,30 @@
         background-image: url(./assets/front.png);
         background-size: cover;
         border: 1px solid #ffffff8c;
+        transition: background 0.5s linear;
 
     }
 
     .card.facedown {
         
         background-image: url(./assets/back.png);
+    }
+
+    .card:after {
+        content: "Face Up";
+        position: absolute;
+        color: white;
+        text-align: center;
+        left: 40%;
+        bottom: -10px;
+        opacity: 0.7;
+        font-weight: 300;
+        font-size: 0.8em;
+    }
+
+    .card.facedown:after {
+        content: "Face Down";
+        left: 38%;
     }
 </style>
 </head>
